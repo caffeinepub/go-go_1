@@ -1,0 +1,125 @@
+{
+  "kind": "build_request",
+  "title": "GO GO! Comic Strip Website",
+  "projectName": "GO GO!",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create the homepage for the 'GO GO!' website with a bold, energetic visual theme inspired by comic book aesthetics — bold outlines, halftone textures, bright pop-art colors (e.g., red, yellow, black), comic-panel grid layout, and punchy typography. The site name 'GO GO!' must be prominently displayed as a hero header. Apply this style consistently across all pages.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "make me a Website called GO GO!"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The site header displays 'GO GO!' in a large, comic-styled font",
+        "The color scheme and typography reflect a comic book / pop-art aesthetic",
+        "The layout uses a comic-panel style grid for content areas",
+        "The style is consistent across all pages"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Display a PG-13 content rating disclaimer/warning banner or splash screen on the site, informing visitors that content may include mature themes suitable for teens and adults (PG-13 level). The user must acknowledge the notice before browsing the comic strips.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "teen or adult comic strips with MABY adult content usually rated PG-13"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A PG-13 disclaimer is shown when the user first visits the site",
+        "The disclaimer explains the content is intended for teens and adults",
+        "The user must click an 'I Understand' or 'Enter' button to proceed",
+        "The disclaimer does not re-appear during the same session after acknowledgment"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Create a comic strip catalog/library page listing all available comic strips as styled cards. Each card shows the comic title and a 'Read' button. The first comic strip listed must be titled 'Legends of the Hidden Butt'.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "the First One is Called Legends of the hidden Butt"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A catalog page displays comic strips as individual cards",
+        "'Legends of the Hidden Butt' appears as the first card",
+        "Each card has a visible title and a 'Read' button",
+        "The cards are styled consistently with the comic book theme"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Create a comic reader page for 'Legends of the Hidden Butt' that embeds the Google Slides presentation using an iframe. The embed URL must be derived from the provided link: https://docs.google.com/presentation/d/1lWnWT1t5nKmRcQhQdWLtfLf4ew7CCjRie_eVSU363a4/copy?slide=id.p#slide=id.p — convert it to the publishable embed format (https://docs.google.com/presentation/d/1lWnWT1t5nKmRcQhQdWLtfLf4ew7CCjRie_eVSU363a4/embed). The reader page should display the comic title above the embed and include a 'Back to Library' link.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "the comic strips are on Good slides",
+          "https://docs.google.com/presentation/d/1lWnWT1t5nKmRcQhQdWLtfLf4ew7CCjRie_eVSU363a4/copy?slide=id.p#slide=id.p"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The reader page embeds the Google Slides presentation in a full-width iframe",
+        "The embed URL used is the published/embed format for the provided presentation ID",
+        "The comic title 'Legends of the Hidden Butt' is displayed above the embed",
+        "A 'Back to Library' navigation link is present",
+        "The reader page is accessible from the catalog card's 'Read' button"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Store the list of comic strips (title, Google Slides presentation ID, and description) in the backend so the frontend can fetch and render them. Initialize the data with the first comic: title='Legends of the Hidden Butt', slideId='1lWnWT1t5nKmRcQhQdWLtfLf4ew7CCjRie_eVSU363a4'.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "the comic strips are on Good slides",
+          "the First One is Called Legends of the hidden Butt"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The backend actor stores an array of comic strip records with at minimum title and slideId fields",
+        "A query function returns the full list of comics",
+        "The initial state includes 'Legends of the Hidden Butt' with the correct slideId",
+        "The frontend fetches the comic list from the backend and renders it dynamically"
+      ]
+    }
+  ],
+  "constraints": [
+    "The Google Slides embed must use the presentation ID from the user-provided URL without alteration: 1lWnWT1t5nKmRcQhQdWLtfLf4ew7CCjRie_eVSU363a4",
+    "Do not host or re-upload any comic slide content — only embed via Google Slides iframe"
+  ],
+  "nonGoals": [
+    "User accounts or login functionality",
+    "Comic strip upload or creation tools",
+    "Comments or social features",
+    "Monetization or payment features",
+    "Any content beyond PG-13 rating"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Bold comic book style logo for 'GO GO!' with thick black outlines, halftone dot pattern background, red and yellow pop-art colors, and starburst effect (gogo-logo.dim_600x200.png)",
+      "Comic book style hero banner background with halftone dots pattern, action lines radiating from center, red and yellow color scheme (hero-banner.dim_1200x400.png)",
+      "Comic strip placeholder cover art for 'Legends of the Hidden Butt' — cartoon style, bold lines, funny exaggerated character silhouette, pop-art colors (comic-cover-legends.dim_400x300.png)"
+    ],
+    "edits": []
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "backend/main.mo": "Motoko actor defining a ComicStrip type and a hardcoded list containing one strip ('Legends of the Hidden Butt'), exposed via a public query function getComicStrips.",
+  "feature_evidence.json": "Feature evidence report mapping implemented features (homepage theme, PG-13 disclaimer, comic catalog, comic reader) to their associated source files, components, and test IDs.",
+  "frontend-file-summaries.txt": "JSON document providing one- or two-sentence descriptions of each frontend source file, serving as a reference summary for the project's frontend architecture.",
+  "frontend/index.css": "Base Tailwind CSS entry file defining OKLCH CSS custom property tokens for light and dark themes including colors, radius, chart, and sidebar variables.",
+  "frontend/index.html": "Minimal HTML shell for the GO GO! React app, mounting the app into a root div and loading the main TypeScript module.",
+  "frontend/src/App.tsx": "Main React app component that configures TanStack Router with a named RootLayout handling the PG-13 disclaimer state, wrapping home, catalog, and reader routes inside the Layout component.",
+  "frontend/src/components/ComicCard.tsx": "Comic strip card component rendering a styled cover area with halftone/action-line overlays, issue badge, title, description, and a 'Read Now!' button that navigates to the reader page.",
+  "frontend/src/components/DisclaimerSplash.tsx": "Full-screen PG-13 content warning overlay with comic book styling that fades out and calls onAcknowledge when the user clicks 'I Understand'.",
+  "frontend/src/components/Layout.tsx": "Site-wide layout wrapper rendering a comic-themed header with the GO GO! logo, Home/Library nav links, a PG-13 badge, a main content area, and a footer.",
+  "frontend/src/hooks/useActor.ts": "Custom hook that creates and caches an ICP backend actor using React Query, returning either an authenticated or anonymous actor based on the current Internet Identity, and invalidating dependent queries when the actor changes.",
+  "frontend/src/hooks/useDisclaimer.ts": "Simple hook that manages a session-storage-backed disclaimer acknowledgment flag, exposing `isAcknowledged` and `acknowledge` functions.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Provides an `InternetIdentityProvider` context and `useInternetIdentity` hook for managing Internet Identity authentication, including login, logout, and identity persistence via `AuthClient`.",
+  "frontend/src/hooks/useQueries.ts": "Exports `useGetComicStrips`, a React Query hook that fetches all comic strips from the backend actor.",
+  "frontend/src/index.css": "Global stylesheet that imports comic-themed Google Fonts, sets up Tailwind base/components/utilities, and defines a comic book pop-art design system with custom CSS variables, halftone patterns, and speech bubble styles.",
+  "frontend/src/main.tsx": "Application entry point that renders the React app wrapped in `QueryClientProvider` and `InternetIdentityProvider`.",
+  "frontend/src/pages/CatalogPage.tsx": "Displays a grid of all available comic strips fetched via `useGetComicStrips`, with loading skeletons, error states, and cover image mapping.",
+  "frontend/src/pages/HomePage.tsx": "Landing page featuring a hero section with the GO GO! branding, a tagline, a CTA button linking to the catalog, and a stats row showing the number of available comics.",
+  "frontend/src/pages/ReaderPage.tsx": "Comic reader page that embeds a Google Slides presentation for a given `slideId` route parameter, displaying the comic title, description, PG-13 badge, and a link to open in Google Slides.",
+  "frontend/tailwind.config.js": "Tailwind CSS configuration for the GO GO! frontend, extending the theme with comic-book-specific fonts, colors (comic-ink, comic-red, etc.), box shadows, and keyframe animations, plus plugins for typography, container queries, and animate.",
+  "project_state.json": "Tracks the overall project state (version 3) for the GO GO! comic website, documenting the summary, architectural notes, required images, and a list of existing implemented features including homepage, PG-13 disclaimer, comic catalog, and comic reader pages."
+}

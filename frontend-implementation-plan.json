@@ -1,0 +1,116 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "GO GO! Comic Strip Website Frontend Implementation",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Create comic book themed homepage with bold 'GO GO!' branding and consistent styling across all pages",
+      "acceptanceCriteria": [
+        "The site header displays 'GO GO!' in a large, comic-styled font",
+        "The color scheme and typography reflect a comic book / pop-art aesthetic",
+        "The layout uses a comic-panel style grid for content areas",
+        "The style is consistent across all pages"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add comic book aesthetic global styles including bold outlines, halftone texture patterns, pop-art color palette (red, yellow, black), comic-panel grid utilities, and punchy typography with custom font imports. Include CSS custom properties for theme colors and reusable halftone/action-line patterns."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind theme with comic book color palette (red, yellow, black variations), custom font families for comic-style headings, box-shadow utilities for bold outlines, and spacing for comic-panel grid layouts."
+        },
+        {
+          "path": "frontend/src/components/Layout.tsx",
+          "operation": "create",
+          "description": "Create a Layout component with header displaying the 'GO GO!' logo using the generated image at frontend/public/assets/generated/gogo-logo.dim_600x200.png, hero banner section using frontend/public/assets/generated/hero-banner.dim_1200x400.png, and consistent comic-themed styling. This component wraps all pages to ensure style consistency."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wrap all routes with the Layout component to apply consistent comic book styling and 'GO GO!' branding across all pages. Ensure the Layout is the top-level wrapper inside the Router."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Display PG-13 content disclaimer splash screen requiring user acknowledgment before site access",
+      "acceptanceCriteria": [
+        "A PG-13 disclaimer is shown when the user first visits the site",
+        "The disclaimer explains the content is intended for teens and adults",
+        "The user must click an 'I Understand' or 'Enter' button to proceed",
+        "The disclaimer does not re-appear during the same session after acknowledgment"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/DisclaimerSplash.tsx",
+          "operation": "create",
+          "description": "Create a DisclaimerSplash component displaying a PG-13 content warning in a comic-styled modal overlay. Include message text explaining content is suitable for teens and adults (PG-13), an 'I Understand' or 'Enter' button to proceed, and comic book styling with bold outlines and pop-art colors."
+        },
+        {
+          "path": "frontend/src/hooks/useDisclaimer.ts",
+          "operation": "create",
+          "description": "Create a custom hook to manage disclaimer acknowledgment state using sessionStorage. Track whether the user has acknowledged the disclaimer in the current session and provide functions to check and set acknowledgment status."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Integrate DisclaimerSplash component using the useDisclaimer hook. Show the disclaimer on initial load if not acknowledged; hide all other content until the user clicks 'I Understand'. Ensure disclaimer does not re-appear during the same session."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Create comic strip catalog page displaying all comics as styled cards with 'Legends of the Hidden Butt' listed first",
+      "acceptanceCriteria": [
+        "A catalog page displays comic strips as individual cards",
+        "'Legends of the Hidden Butt' appears as the first card",
+        "Each card has a visible title and a 'Read' button",
+        "The cards are styled consistently with the comic book theme"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/CatalogPage.tsx",
+          "operation": "create",
+          "description": "Create CatalogPage component that fetches comic strips from the backend using the getComicStrips() method. Display comics as a grid of comic-styled cards. Each card shows the comic title, cover art (use frontend/public/assets/generated/comic-cover-legends.dim_400x300.png for 'Legends of the Hidden Butt'), and a 'Read' button linking to the reader page. Apply comic book styling with bold outlines and pop-art colors."
+        },
+        {
+          "path": "frontend/src/components/ComicCard.tsx",
+          "operation": "create",
+          "description": "Create ComicCard component to render individual comic strip cards. Display title, cover image, and 'Read' button. Style with bold comic-panel borders, halftone patterns, and pop-art colors consistent with the site theme. Accept comic data (title, slideId, cover image path) as props."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for the catalog page at '/catalog' path. Register CatalogPage component with the router and ensure it is wrapped by the Layout component for consistent styling."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Create comic reader page embedding Google Slides presentation with navigation back to catalog",
+      "acceptanceCriteria": [
+        "The reader page embeds the Google Slides presentation in a full-width iframe",
+        "The embed URL used is the published/embed format for the provided presentation ID",
+        "The comic title 'Legends of the Hidden Butt' is displayed above the embed",
+        "A 'Back to Library' navigation link is present",
+        "The reader page is accessible from the catalog card's 'Read' button"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/ReaderPage.tsx",
+          "operation": "create",
+          "description": "Create ReaderPage component that accepts a comic slideId as a URL parameter. Display the comic title at the top, embed the Google Slides presentation using an iframe with the URL format https://docs.google.com/presentation/d/{slideId}/embed, and include a 'Back to Library' link navigating to the catalog page. Style the page with comic book theme elements and ensure the iframe is responsive and full-width."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for the reader page at '/reader/:slideId' path. Register ReaderPage component with the router, passing slideId as a parameter. Ensure the ComicCard 'Read' button links to this route with the correct slideId."
+        }
+      ]
+    }
+  ]
+}

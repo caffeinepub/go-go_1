@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "A website called 'GO GO!' featuring teen/adult comic strips rated PG-13. Comics are presented as Google Slides. The first comic strip is called 'Legends of the Hidden Butt' with a provided Google Slides link.",
+  "architectural_notes": [
+    "Comic strips are hosted as Google Slides presentations and embedded/linked from the site",
+    "First comic: 'Legends of the Hidden Butt' - https://docs.google.com/presentation/d/1lWnWT1t5nKmRcQhQdWLtfLf4ew7CCjRie_eVSU363a4/"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Bold comic book style logo for 'GO GO!' with thick black outlines, halftone dot pattern background, red and yellow pop-art colors, and starburst effect (gogo-logo.dim_600x200.png)\n- Comic book style hero banner background with halftone dots pattern, action lines radiating from center, red and yellow color scheme (hero-banner.dim_1200x400.png)\n- Comic strip placeholder cover art for 'Legends of the Hidden Butt' — cartoon style, bold lines, funny exaggerated character silhouette, pop-art colors (comic-cover-legends.dim_400x300.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-the-homepage-for-the-go-go-website-with-a-bold-energetic-visual-theme-inspired-by-comic-book-aesthetics-bold-outlines-halftone-textures-bright-pop-art-colors-e-g-red-yellow-black-comic-panel-grid-layout-and-punchy-typography-the-site-name-go-go-must-be-prominently-displayed-as-a-hero-header-apply-this-style-consistently-across-all-pages",
+      "title": "Create the homepage for the 'GO GO!' website with a bold, energetic visual theme inspired by comic book aesthetics — bold outlines, halftone textures, bright pop-art colors (e.g., red, yellow, black), comic-panel grid layout, and punchy typography. The site name 'GO GO!' must be prominently displayed as a hero header. Apply this style consistently across all pages.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-display-a-pg-13-content-rating-disclaimer-warning-banner-or-splash-screen-on-the-site-informing-visitors-that-content-may-include-mature-themes-suitable-for-teens-and-adults-pg-13-level-the-user-must-acknowledge-the-notice-before-browsing-the-comic-strips",
+      "title": "Display a PG-13 content rating disclaimer/warning banner or splash screen on the site, informing visitors that content may include mature themes suitable for teens and adults (PG-13 level). The user must acknowledge the notice before browsing the comic strips.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-comic-strip-catalog-library-page-listing-all-available-comic-strips-as-styled-cards-each-card-shows-the-comic-title-and-a-read-button-the-first-comic-strip-listed-must-be-titled-legends-of-the-hidden-butt",
+      "title": "Create a comic strip catalog/library page listing all available comic strips as styled cards. Each card shows the comic title and a 'Read' button. The first comic strip listed must be titled 'Legends of the Hidden Butt'.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-comic-reader-page-for-legends-of-the-hidden-butt-that-embeds-the-google-slides-presentation-using-an-iframe-the-embed-url-must-be-derived-from-the-provided-link-https-docs-google-com-presentation-d-1lwnwt1t5nkmrcqhqdwltflf4ew7ccjrie-evsu363a4-copy-slide-id-p-slide-id-p-convert-it-to-the-publishable-embed-format-https-docs-google-com-presentation-d-1lwnwt1t5nkmrcqhqdwltflf4ew7ccjrie-evsu363a4-embed-the-reader-page-should-display-the-comic-title-above-the-embed-and-include-a-back-to-library-link",
+      "title": "Create a comic reader page for 'Legends of the Hidden Butt' that embeds the Google Slides presentation using an iframe. The embed URL must be derived from the provided link: https://docs.google.com/presentation/d/1lWnWT1t5nKmRcQhQdWLtfLf4ew7CCjRie_eVSU363a4/copy?slide=id.p#slide=id.p — convert it to the publishable embed format (https://docs.google.com/presentation/d/1lWnWT1t5nKmRcQhQdWLtfLf4ew7CCjRie_eVSU363a4/embed). The reader page should display the comic title above the embed and include a 'Back to Library' link.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create GO GO! website homepage showcasing comic strips",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Embed or link 'Legends of the Hidden Butt' Google Slides comic strip",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "PG-13 content rating notice/disclaimer on the site",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Store the list of comic strips (title, Google Slides presentation ID, and description) in the backend so the frontend can fetch and render them. Initialize the data with the first comic: title='Legends of the Hidden Butt', slideId='1lWnWT1t5nKmRcQhQdWLtfLf4ew7CCjRie_eVSU363a4'.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "GO GO!",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

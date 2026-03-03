@@ -1,0 +1,13 @@
+{
+  "frontend/src/index.css": "Global styles with comic book pop-art aesthetic including Google Fonts imports (Bangers, Comic Neue, Permanent Marker), OKLCH color tokens for red/yellow/black palette, halftone dot patterns, action lines, comic panel borders, speech bubbles, and utility classes for the GO GO! theme.",
+  "frontend/tailwind.config.js": "Extended Tailwind config with comic-specific font families (Bangers, Comic Neue, Permanent Marker), semantic comic color tokens (comic-ink, comic-red, comic-yellow, comic-blue, comic-cream), comic box-shadow utilities, and pop-in/bounce animations.",
+  "frontend/src/hooks/useDisclaimer.ts": "Custom hook managing PG-13 disclaimer acknowledgment state using sessionStorage, providing isAcknowledged() and acknowledge() functions.",
+  "frontend/src/hooks/useQueries.ts": "React Query hook useGetComicStrips that fetches the comic strip list from the backend actor using the getComicStrips() method.",
+  "frontend/src/components/DisclaimerSplash.tsx": "Full-screen PG-13 content warning overlay with comic book styling, halftone background, rating badge, content description, and an \"I Understand\" CTA button with fade-out animation on acknowledgment.",
+  "frontend/src/components/Layout.tsx": "Site-wide layout wrapper with comic-themed header (GO GO! logo, nav links, PG-13 badge), main content area, and footer with attribution and caffeine.ai link.",
+  "frontend/src/components/ComicCard.tsx": "Individual comic strip card component with colored cover area, halftone/action-line overlays, title, description, PG-13 badge, and a \"Read Now!\" button that navigates to the reader page.",
+  "frontend/src/pages/HomePage.tsx": "Homepage with hero section featuring the GO GO! logo, tagline, CTA buttons, featured comic preview with cover image, and an \"About\" section explaining the site.",
+  "frontend/src/pages/CatalogPage.tsx": "Comic library page displaying all comics from the backend as a responsive grid of ComicCard components, with loading skeletons and error/empty states.",
+  "frontend/src/pages/ReaderPage.tsx": "Comic reader page embedding the Google Slides presentation in a responsive 16:9 iframe, with comic title header, navigation tip, back-to-library links, and full-screen option.",
+  "frontend/src/App.tsx": "Main app component setting up TanStack Router with a named RootLayout component (fixing hooks-in-anonymous-function lint errors) that handles the PG-13 disclaimer and wraps all pages in the Layout, with child routes for home, catalog, and reader pages."
+}
