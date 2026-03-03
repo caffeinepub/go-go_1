@@ -17,8 +17,9 @@ export default {
     extend: {
       fontFamily: {
         bangers: ['Bangers', 'cursive'],
-        comic: ['Comic Neue', 'cursive'],
+        comic: ['"Comic Sans MS"', '"Comic Sans"', 'cursive'],
         marker: ['Permanent Marker', 'cursive'],
+        sans: ['"Comic Sans MS"', '"Comic Sans"', 'cursive'],
       },
       colors: {
         border: 'oklch(var(--border))',

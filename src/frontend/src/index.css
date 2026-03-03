@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bangers&family=Permanent+Marker&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -101,7 +101,7 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: "Comic Neue", cursive;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
   }
 }
 
