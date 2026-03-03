@@ -1,14 +1,25 @@
-# Specification
+# GO GO! Comics
 
-## Summary
-**Goal:** Build the "GO GO!" comic strip website with a bold pop-art/comic-book aesthetic, a PG-13 age disclaimer, a comic library catalog, and an embedded Google Slides comic reader.
+## Current State
+The app is a retro-styled comic strip website called "GO GO!" with:
+- A backend storing a list of comic strips (currently one: "Legends of the Hidden Butt")
+- A catalog page listing all available comics with cover images
+- A reader page that embeds Google Slides for each comic
+- An age disclaimer splash screen (must confirm you are over 12)
 
-**Planned changes:**
-- Create a global comic-book visual theme: bold outlines, halftone textures, bright red/yellow/black pop-art colors, comic-panel grid layout, and punchy typography applied consistently across all pages
-- Add a PG-13 splash/disclaimer screen shown on first visit; user must click "Enter" or "I Understand" to proceed; dismissed state is stored in session so it does not re-appear
-- Build a homepage displaying the "GO GO!" hero header with logo and hero banner
-- Build a comic library/catalog page listing comics as styled cards (title, cover art, "Read" button); initially populated with "Legends of the Hidden Butt"
-- Build a comic reader page for each comic that displays the title, embeds the Google Slides presentation via iframe using the embed URL format, and includes a "Back to Library" link
-- Store comic strip records (title, slideId, description) in the backend with initial entry: title="Legends of the Hidden Butt", slideId="1lWnWT1t5nKmRcQhQdWLtfLf4ew7CCjRie_eVSU363a4"; expose a query for the frontend to fetch the list dynamically
+## Requested Changes (Diff)
 
-**User-visible outcome:** Visitors land on a splash disclaimer, acknowledge the PG-13 notice, then browse the "GO GO!" comic library and read "Legends of the Hidden Butt" embedded directly from Google Slides.
+### Add
+- New comic strip entry: "Peehead & Butthead" — described as a brand new release, rated PG-13
+- "NEW" badge on the Peehead & Butthead card in the catalog to highlight it as today's release
+
+### Modify
+- Backend comic strips list: add the new entry
+
+### Remove
+- Nothing removed
+
+## Implementation Plan
+1. Generate updated Motoko backend with two comic strips (existing + Peehead & Butthead)
+2. Update frontend CatalogPage to show a "NEW TODAY" badge on the Peehead & Butthead card
+3. Generate a cover image for Peehead & Butthead
